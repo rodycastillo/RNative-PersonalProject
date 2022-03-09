@@ -13,7 +13,7 @@ import {
 import {Background} from '../components/Background';
 import {useForm} from '../hooks/useForm';
 
-export const LoginScreen = () => {
+export const LoginScreen = ({navigation}) => {
   const {email, password, onChange} = useForm({
     email: '',
     password: '',
@@ -23,6 +23,7 @@ export const LoginScreen = () => {
     console.log({email, password});
     Keyboard.dismiss();
     // signIn({correo: email, password});
+    navigation.replace('HomeScreen');
   };
   return (
     <>
