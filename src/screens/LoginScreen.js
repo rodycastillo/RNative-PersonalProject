@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
   Keyboard,
-  Alert,
   StyleSheet,
 } from 'react-native';
 import {Background} from '../components/Background';
@@ -23,7 +22,7 @@ export const LoginScreen = ({navigation}) => {
     console.log({email, password});
     Keyboard.dismiss();
     // signIn({correo: email, password});
-    navigation.replace('HomeScreen');
+    navigation.replace('RegisterScreen');
   };
   return (
     <>
