@@ -12,7 +12,7 @@ import {CardReport} from '../components/CardReport';
 export const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Reports</Text>
+      <Text style={styles.title}>Puppies</Text>
       <View style={styles.reports}>
         <ScrollView style={{width: '100%'}}>
           <CardReport />

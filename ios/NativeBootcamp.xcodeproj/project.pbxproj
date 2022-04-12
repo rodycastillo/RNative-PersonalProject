@@ -38,6 +38,8 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = NativeBootcamp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = NativeBootcamp/main.m; sourceTree = "<group>"; };
 		21FE345130A8D079C889041D /* Pods-NativeBootcamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeBootcamp.debug.xcconfig"; path = "Target Support Files/Pods-NativeBootcamp/Pods-NativeBootcamp.debug.xcconfig"; sourceTree = "<group>"; };
+		231D22BD2805ED92002388D9 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		231D22C12805EEDD002388D9 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
 		3A0E7B201C9540D4AC403779 /* Pods-NativeBootcamp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeBootcamp.release.xcconfig"; path = "Target Support Files/Pods-NativeBootcamp/Pods-NativeBootcamp.release.xcconfig"; sourceTree = "<group>"; };
 		5D722D99EA9F7BAF91151EE5 /* Pods-NativeBootcamp-NativeBootcampTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeBootcamp-NativeBootcampTests.debug.xcconfig"; path = "Target Support Files/Pods-NativeBootcamp-NativeBootcampTests/Pods-NativeBootcamp-NativeBootcampTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NativeBootcamp/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -96,6 +98,15 @@
 			name = NativeBootcamp;
 			sourceTree = "<group>";
 		};
+		231D22BC2805ED67002388D9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				231D22C12805EEDD002388D9 /* Ionicons.ttf */,
+				231D22BD2805ED92002388D9 /* Ionicons.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +125,6 @@
 				5D722D99EA9F7BAF91151EE5 /* Pods-NativeBootcamp-NativeBootcampTests.debug.xcconfig */,
 				961ED165C1567EF77A7E001E /* Pods-NativeBootcamp-NativeBootcampTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -128,6 +138,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				231D22BC2805ED67002388D9 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* NativeBootcamp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* NativeBootcampTests */,
@@ -160,7 +171,6 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				F4544483BC53340B004C6F1C /* [CP] Embed Pods Frameworks */,
 				84E6AF66BA9680BB23AAAC5F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -183,7 +193,6 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				4DAC6B461416285FA2135C92 /* [CP] Embed Pods Frameworks */,
 				8A0703F3FC0759DF0CA7F6DC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -287,23 +296,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4DAC6B461416285FA2135C92 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NativeBootcamp/Pods-NativeBootcamp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NativeBootcamp/Pods-NativeBootcamp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NativeBootcamp/Pods-NativeBootcamp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8120423418E0631D16E239BC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -358,23 +350,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NativeBootcamp/Pods-NativeBootcamp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F4544483BC53340B004C6F1C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NativeBootcamp-NativeBootcampTests/Pods-NativeBootcamp-NativeBootcampTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NativeBootcamp-NativeBootcampTests/Pods-NativeBootcamp-NativeBootcampTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NativeBootcamp-NativeBootcampTests/Pods-NativeBootcamp-NativeBootcampTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {

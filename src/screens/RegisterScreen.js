@@ -42,7 +42,7 @@ export const RegisterScreen = ({navigation}) => {
               style.inputField,
               Platform.OS === 'ios' && style.inputFieldIOS,
             ]}
-            onChange={value => onChange(value, 'name')}
+            onChangeText={value => onChange(value, 'name')}
             value={name}
             onSubmitEditing={onRegister}
             autoCapitalize="none"
@@ -58,7 +58,7 @@ export const RegisterScreen = ({navigation}) => {
               style.inputField,
               Platform.OS === 'ios' && style.inputFieldIOS,
             ]}
-            onChange={value => onChange(value, 'email')}
+            onChangeText={value => onChange(value, 'email')}
             value={email}
             onSubmitEditing={onRegister}
             autoCapitalize="none"
@@ -74,7 +74,7 @@ export const RegisterScreen = ({navigation}) => {
               style.inputField,
               Platform.OS === 'ios' && style.inputFieldIOS,
             ]}
-            onChange={value => onChange(value, 'password')}
+            onChangeText={value => onChange(value, 'password')}
             value={password}
             onSubmitEditing={onRegister}
             autoCapitalize="none"
@@ -90,7 +90,7 @@ export const RegisterScreen = ({navigation}) => {
               style.inputField,
               Platform.OS === 'ios' && style.inputFieldIOS,
             ]}
-            onChange={value => onChange(value, 'confirmPassword')}
+            onChangeText={value => onChange(value, 'confirmPassword')}
             value={confirmPassword}
             onSubmitEditing={onRegister}
             autoCapitalize="none"
@@ -102,6 +102,17 @@ export const RegisterScreen = ({navigation}) => {
               style={style.button}
               onPress={onRegister}>
               <Text style={style.buttonTxt}> Register </Text>
+            </TouchableOpacity>
+          </View>
+          <View style={style.btnToRegister}>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              style={style.btnReg}
+              onPress={() => navigation.replace('LoginScreen')}>
+              <Text style={style.btnTxtReg}>
+                {' '}
+                Login <View style={style.arrow}></View>
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -156,5 +167,24 @@ const style = StyleSheet.create({
   newUserContainer: {
     alignItems: 'flex-end',
     marginTop: 50,
+  },
+  btnToRegister: {
+    position: 'absolute',
+    right: 30,
+    bottom: '20%',
+  },
+  btnTxtReg: {
+    fontWeight: '800',
+    color: '#fff',
+    fontSize: 16,
+  },
+  arrow: {
+    borderBottomColor: '#fff',
+    borderBottomWidth: 3,
+    borderRightColor: '#fff',
+    borderRightWidth: 3,
+    width: 10,
+    height: 10,
+    transform: [{rotate: '-45deg'}],
   },
 });

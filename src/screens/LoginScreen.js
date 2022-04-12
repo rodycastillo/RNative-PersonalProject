@@ -22,7 +22,7 @@ export const LoginScreen = ({navigation}) => {
     console.log({email, password});
     Keyboard.dismiss();
     // signIn({correo: email, password});
-    navigation.replace('RegisterScreen');
+    navigation.replace('HomeScreen');
   };
   return (
     <>
@@ -79,6 +79,17 @@ export const LoginScreen = ({navigation}) => {
               <Text style={styles.buttonTxt}> Login </Text>
             </TouchableOpacity>
           </View>
+          <View style={styles.btnToRegister}>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              style={styles.btnReg}
+              onPress={() => navigation.replace('RegisterScreen')}>
+              <Text style={styles.btnTxtReg}>
+                {' '}
+                Register <View style={styles.arrow}></View>
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </KeyboardAvoidingView>
     </>
@@ -131,6 +142,25 @@ const styles = StyleSheet.create({
   newUserContainer: {
     alignItems: 'flex-end',
     marginTop: 50,
+  },
+  btnToRegister: {
+    position: 'absolute',
+    right: 30,
+    bottom: '20%',
+  },
+  btnTxtReg: {
+    fontWeight: '800',
+    color: '#fff',
+    fontSize: 16,
+  },
+  arrow: {
+    borderBottomColor: '#fff',
+    borderBottomWidth: 3,
+    borderRightColor: '#fff',
+    borderRightWidth: 3,
+    width: 10,
+    height: 10,
+    transform: [{rotate: '-45deg'}],
   },
   buttonReturn: {
     position: 'absolute',
