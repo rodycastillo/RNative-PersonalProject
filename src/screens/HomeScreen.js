@@ -3,9 +3,6 @@ import {
   View,
   Text,
   StyleSheet,
-  ScrollView,
-  FlatList,
-  ActivityIndicator,
 } from 'react-native';
 import {CardReport} from '../components/CardReport';
 
@@ -14,10 +11,8 @@ export const HomeScreen = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Puppies</Text>
       <View style={styles.reports}>
-        <ScrollView style={{width: '100%'}}>
           <CardReport />
           <CardReport />
-        </ScrollView>
       </View>
     </View>
   );
