@@ -7,20 +7,28 @@ import {
   Platform,
   TextInput,
   TouchableOpacity,
+  Alert,
+  Keyboard,
 } from 'react-native';
 import {Background} from '../components/Background';
 import {useForm} from '../hooks/useForm';
 
 export const RegisterScreen = ({navigation}) => {
-  const {name, email, password, confirmPassword, onChange} = useForm({
+  const {name, email, password, dni, onChange} = useForm({
     name: '',
     email: '',
     password: '',
-    confirmPassword: '',
+    dni: '',
+
   });
   const onRegister = () => {
-    console.log({name, email, password, confirmPassword}, 'Line 22');
+    if(name.length === 0 || email.length === 0 || password.length === 0 || dni.length === 0) {
+      Alert.alert("Complete the fields")
+      return;
+    }
+    console.log({name, email, password}, 'Line 26');
     navigation.replace('LoginScreen');
+    Keyboard.dismiss();
   };
   return (
     <>
@@ -32,7 +40,7 @@ export const RegisterScreen = ({navigation}) => {
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <View style={style.container}>
           <Text style={style.title}>Register Native</Text>
-          <Text style={style.label}>Names: </Text>
+          <Text style={style.label}>Nombres: </Text>
           <TextInput
             placeholder="Ingrese su nombre"
             placeholderTextColor="rgba(255, 255, 255, 0.4)"
@@ -44,6 +52,23 @@ export const RegisterScreen = ({navigation}) => {
             ]}
             onChangeText={value => onChange(value, 'name')}
             value={name}
+            onSubmitEditing={onRegister}
+            autoCapitalize="none"
+            autoCorrect={false}
+          />
+          <Text style={style.label}>Dni: </Text>
+          <TextInput
+            placeholder="Ingrese su dni"
+            placeholderTextColor="rgba(255, 255, 255, 0.4)"
+            keyboardType="numeric"
+            underlineColorAndroid="#fff"
+            style={[
+              style.inputField,
+              Platform.OS === 'ios' && style.inputFieldIOS,
+            ]}
+            onChangeText={value => onChange(value, 'dni')}
+            value={dni}
+            maxLength={8}
             onSubmitEditing={onRegister}
             autoCapitalize="none"
             autoCorrect={false}
@@ -76,22 +101,6 @@ export const RegisterScreen = ({navigation}) => {
             ]}
             onChangeText={value => onChange(value, 'password')}
             value={password}
-            onSubmitEditing={onRegister}
-            autoCapitalize="none"
-            autoCorrect={false}
-          />
-          <Text style={style.label}>Password Confirm: </Text>
-          <TextInput
-            placeholder="Confirme su contraseña"
-            placeholderTextColor="rgba(255, 255, 255, 0.4)"
-            secureTextEntry={true}
-            underlineColorAndroid="#fff"
-            style={[
-              style.inputField,
-              Platform.OS === 'ios' && style.inputFieldIOS,
-            ]}
-            onChangeText={value => onChange(value, 'confirmPassword')}
-            value={confirmPassword}
             onSubmitEditing={onRegister}
             autoCapitalize="none"
             autoCorrect={false}

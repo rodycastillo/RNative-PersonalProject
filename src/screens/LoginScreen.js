@@ -13,15 +13,19 @@ import {Background} from '../components/Background';
 import {useForm} from '../hooks/useForm';
 
 export const LoginScreen = ({navigation}) => {
-  const {email, password, onChange} = useForm({
-    email: '',
+  const {dni, password, onChange} = useForm({
+    dni: '',
     password: '',
   });
 
   const onLogin = () => {
-    console.log({email, password});
+    if(dni.length === 0 || password.length === 0) {
+      Alert.alert("Complete the fields pls!!")
+      return;
+    }
+    console.log({dni, password});
     Keyboard.dismiss();
-    // signIn({correo: email, password});
+    // signIn({correo: dni, password});
     navigation.replace('HomeScreen');
   };
   return (
@@ -36,19 +40,19 @@ export const LoginScreen = ({navigation}) => {
         <View style={styles.container}>
           <Text style={styles.title}>Login Native</Text>
 
-          <Text style={styles.label}>Email:</Text>
+          <Text style={styles.label}>dni:</Text>
           <TextInput
-            placeholder="Ingrese su email"
+            placeholder="Ingrese su dni"
             placeholderTextColor="rgba(255,255,255,0.4)"
-            keyboardType="email-address"
+            keyboardType="numeric"
             underlineColorAndroid="white"
             style={[
               styles.inputField,
               Platform.OS === 'ios' && styles.inputFieldIOS,
             ]}
             selectionColor="white"
-            onChangeText={value => onChange(value, 'email')}
-            value={email}
+            onChangeText={value => onChange(value, 'dni')}
+            value={dni}
             onSubmitEditing={onLogin}
             autoCapitalize="none"
             autoCorrect={false}
