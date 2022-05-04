@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {
   KeyboardAvoidingView,
   StyleSheet,
@@ -11,9 +11,11 @@ import {
   Keyboard,
 } from 'react-native';
 import {Background} from '../components/Background';
+import { AuthContext } from '../context/AuthContext';
 import {useForm} from '../hooks/useForm';
 
 export const RegisterScreen = ({navigation}) => {
+  const { signUp } = useContext(AuthContext)
   const {name, email, password, dni, onChange} = useForm({
     name: '',
     email: '',
@@ -27,8 +29,9 @@ export const RegisterScreen = ({navigation}) => {
       return;
     }
     console.log({name, email, password}, 'Line 26');
-    navigation.replace('LoginScreen');
+    signUp({name, email, password, dni})
     Keyboard.dismiss();
+    navigation.replace('LoginScreen');
   };
   return (
     <>

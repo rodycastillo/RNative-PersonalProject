@@ -1,4 +1,5 @@
 import React from 'react';
+import {useContext} from 'react';
 import {
   Text,
   View,
@@ -10,22 +11,24 @@ import {
   StyleSheet,
 } from 'react-native';
 import {Background} from '../components/Background';
+import {AuthContext} from '../context/AuthContext';
 import {useForm} from '../hooks/useForm';
 
 export const LoginScreen = ({navigation}) => {
+  const {signIn} = useContext(AuthContext);
   const {dni, password, onChange} = useForm({
     dni: '',
     password: '',
   });
 
   const onLogin = () => {
-    if(dni.length === 0 || password.length === 0) {
-      Alert.alert("Complete the fields pls!!")
+    if (dni.length === 0 || password.length === 0) {
+      Alert.alert('Complete the fields pls!!');
       return;
     }
     console.log({dni, password});
+    signIn({dni, password});
     Keyboard.dismiss();
-    // signIn({correo: dni, password});
     navigation.replace('HomeScreen');
   };
   return (
