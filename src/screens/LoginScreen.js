@@ -9,6 +9,7 @@ import {
   KeyboardAvoidingView,
   Keyboard,
   StyleSheet,
+  Alert,
 } from 'react-native';
 import {Background} from '../components/Background';
 import {AuthContext} from '../context/AuthContext';
@@ -29,7 +30,7 @@ export const LoginScreen = ({navigation}) => {
     console.log({dni, password});
     signIn({dni, password});
     Keyboard.dismiss();
-    navigation.replace('HomeScreen');
+    navigation.replace('Tabs');
   };
   return (
     <>
@@ -56,6 +57,7 @@ export const LoginScreen = ({navigation}) => {
             selectionColor="white"
             onChangeText={value => onChange(value, 'dni')}
             value={dni}
+            maxLength={8}
             onSubmitEditing={onLogin}
             autoCapitalize="none"
             autoCorrect={false}
