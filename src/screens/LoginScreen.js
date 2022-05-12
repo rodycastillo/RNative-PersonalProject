@@ -1,5 +1,4 @@
-import React from 'react';
-import {useContext} from 'react';
+import React, {useContext} from 'react';
 import {
   Text,
   View,
@@ -27,7 +26,6 @@ export const LoginScreen = ({navigation}) => {
       Alert.alert('Complete the fields pls!!');
       return;
     }
-    console.log({dni, password});
     signIn({dni, password});
     Keyboard.dismiss();
     navigation.replace('Tabs');

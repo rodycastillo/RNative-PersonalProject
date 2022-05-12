@@ -11,25 +11,28 @@ import {
   Keyboard,
 } from 'react-native';
 import {Background} from '../components/Background';
-import { AuthContext } from '../context/AuthContext';
+import {AuthContext} from '../context/AuthContext';
 import {useForm} from '../hooks/useForm';
 
 export const RegisterScreen = ({navigation}) => {
-  const { signUp } = useContext(AuthContext)
+  const {signUp} = useContext(AuthContext);
   const {name, email, password, dni, onChange} = useForm({
     name: '',
     email: '',
     password: '',
     dni: '',
-
   });
   const onRegister = () => {
-    if(name.length === 0 || email.length === 0 || password.length === 0 || dni.length === 0) {
-      Alert.alert("Complete the fields")
+    if (
+      name.length === 0 ||
+      email.length === 0 ||
+      password.length === 0 ||
+      dni.length === 0
+    ) {
+      Alert.alert('Complete the fields');
       return;
     }
-    console.log({name, email, password}, 'Line 26');
-    signUp({name, email, password, dni})
+    signUp({name, email, password, dni});
     Keyboard.dismiss();
     navigation.replace('LoginScreen');
   };

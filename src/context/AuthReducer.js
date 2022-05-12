@@ -8,6 +8,7 @@ export const authReducer = (state, action) => {
         token: action.payload.token,
       };
     case 'LOGOUT':
+    case 'NOT-AUTH':
       return {
         ...state,
         user: null,
@@ -15,8 +16,6 @@ export const authReducer = (state, action) => {
         token: null,
       };
     default:
-      return {
-        ...state,
-      };
+      return state;
   }
 };

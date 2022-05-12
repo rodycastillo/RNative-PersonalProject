@@ -1,6 +1,6 @@
 // import React, {createContext, useReducer, useEffect} from 'react';
 // import AsyncStorage from '@react-native-async-storage/async-storage';
-import api from '../api/api';
+// import api from '../api/api';
 import React, {createContext, useReducer} from 'react';
 import {authReducer} from './AuthReducer';
 import axios from 'axios';
@@ -22,7 +22,7 @@ export const AuthProvider = ({children}) => {
         'http://localhost:9000/api/v1.0/auth/login',
         dts,
       );
-
+      console.log(data, 'SIGNIN');
       dispatch({
         type: 'LOGIN',
         payload: {
@@ -37,8 +37,11 @@ export const AuthProvider = ({children}) => {
   };
   const signUp = async dts => {
     try {
-      console.log(dts);
-      await axios.post('http://localhost:9000/api/v1.0/auth/register', dts);
+      const data = await axios.post(
+        'http://localhost:9000/api/v1.0/auth/register',
+        dts,
+      );
+      console.log(data, 'SIGNIN');
     } catch (error) {
       console.log('Error: ' + error);
     }
