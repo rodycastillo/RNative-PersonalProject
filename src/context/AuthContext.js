@@ -1,9 +1,10 @@
 // import React, {createContext, useReducer, useEffect} from 'react';
-// import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 // import api from '../api/api';
 import React, {createContext, useReducer} from 'react';
 import {authReducer} from './AuthReducer';
 import axios from 'axios';
+import {userLogin, userRegister} from '../services/auth';
 
 const authInitialState = {
   status: 'checking',
@@ -18,10 +19,7 @@ export const AuthProvider = ({children}) => {
 
   const signIn = async dts => {
     try {
-      const {data} = await axios.post(
-        'http://localhost:9000/api/v1.0/auth/login',
-        dts,
-      );
+      const data = await userLogin(dts);
       console.log(data, 'SIGNIN');
       dispatch({
         type: 'LOGIN',
@@ -30,17 +28,16 @@ export const AuthProvider = ({children}) => {
           user: data.user,
         },
       });
-      // await AsyncStorage.setItem('token', data.token)
+      await AsyncStorage.setItem('user', JSON.stringify(data.user));
+      await AsyncStorage.setItem('isLogIn', JSON.stringify(true));
+      await AsyncStorage.setItem('token', data.token);
     } catch (error) {
       console.log('Error: ' + error);
     }
   };
   const signUp = async dts => {
     try {
-      const data = await axios.post(
-        'http://localhost:9000/api/v1.0/auth/register',
-        dts,
-      );
+      const data = await userRegister(dts);
       console.log(data, 'SIGNIN');
     } catch (error) {
       console.log('Error: ' + error);
@@ -48,7 +45,7 @@ export const AuthProvider = ({children}) => {
   };
 
   const logOut = async () => {
-    // await AsyncStorage.removeItem('token')
+    await AsyncStorage.removeItem('token');
     dispatch({type: 'LOGOUT'});
   };
 

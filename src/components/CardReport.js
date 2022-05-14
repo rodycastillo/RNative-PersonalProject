@@ -1,10 +1,13 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, Image} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {COLORS, FONTS} from '../utils/constants';
 import {FadeInImage} from './FadeInImage';
 
-export const CardReport = ({name = 'QWERTY'}) => {
+export const CardReport = ({
+  name = 'QWERTY',
+  img = 'https://source.unsplash.com/random?sig=1',
+}) => {
   const {top} = useSafeAreaInsets();
   return (
     <View style={{flex: 1}}>
@@ -16,11 +19,9 @@ export const CardReport = ({name = 'QWERTY'}) => {
           }}>
           {name}
         </Text>
-        <FadeInImage
-          style={styles.puppyImg}
-          uri={'https://source.unsplash.com/random?sig=1'}
-        />
+        <FadeInImage style={styles.puppyImg} uri={img} />
       </View>
+      <Text>{img}</Text>
     </View>
     // <View style={style.container}>
     //   <Text style={style.title}>Report N^{nro}</Text>
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.58,
     shadowRadius: 16.0,
 
-    elevation: 24,
+    elevation: '24',
   },
   backBtn: {
     position: 'absolute',
@@ -90,7 +91,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.39,
     shadowRadius: 8.3,
 
-    elevation: 13,
+    elevation: '13',
   },
   loadingIndicator: {
     flex: 1,

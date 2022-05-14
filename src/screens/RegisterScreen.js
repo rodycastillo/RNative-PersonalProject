@@ -22,19 +22,24 @@ export const RegisterScreen = ({navigation}) => {
     password: '',
     dni: '',
   });
-  const onRegister = () => {
+  const onRegister = async () => {
     if (
       name.length === 0 ||
       email.length === 0 ||
       password.length === 0 ||
       dni.length === 0
     ) {
-      Alert.alert('Complete the fields');
+      Alert.alert('Completa los campos');
       return;
     }
-    signUp({name, email, password, dni});
-    Keyboard.dismiss();
-    navigation.replace('LoginScreen');
+    try {
+      await signUp({name, email, password, dni});
+      Keyboard.dismiss();
+      navigation.replace('LoginScreen');
+    } catch (error) {
+      Alert.alert('Registro Incorrecto');
+      console.log(error, 'Register Error');
+    }
   };
   return (
     <>

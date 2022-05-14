@@ -21,14 +21,19 @@ export const LoginScreen = ({navigation}) => {
     password: '',
   });
 
-  const onLogin = () => {
+  const onLogin = async () => {
     if (dni.length === 0 || password.length === 0) {
-      Alert.alert('Complete the fields pls!!');
+      Alert.alert('Completa los campos!!');
       return;
     }
-    signIn({dni, password});
-    Keyboard.dismiss();
-    navigation.replace('Tabs');
+    try {
+      await signIn({dni, password});
+      Keyboard.dismiss();
+      // navigation.replace('Tabs');
+    } catch (error) {
+      Alert.alert('Login Incorrecto');
+      console.log(error, 'Login Error');
+    }
   };
   return (
     <>
