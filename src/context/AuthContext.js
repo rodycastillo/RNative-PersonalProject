@@ -1,9 +1,6 @@
-// import React, {createContext, useReducer, useEffect} from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-// import api from '../api/api';
 import React, {createContext, useReducer} from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {authReducer} from './AuthReducer';
-import axios from 'axios';
 import {userLogin, userRegister} from '../services/auth';
 
 const authInitialState = {

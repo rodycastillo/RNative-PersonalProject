@@ -6,23 +6,30 @@ import {useContext} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {CardReport} from '../components/CardReport';
 import {AuthContext} from '../context/AuthContext';
-// import {CitesContext} from '../context/CitesContext';
-// import {AuthContext} from '../context/AuthContext';
+import {getOnePuppyByDni} from '../services/cite';
 
 export const HomeScreen = () => {
   const {user} = useContext(AuthContext);
   const [puppy, setPuppy] = useState([]);
 
   const getPuppy = async () => {
-    await axios
-      .get(`http://localhost:9000/api/v1.0/cites/puppy/${user.dni}`)
-      .then(({data}) => {
-        console.log(data.puppy, 'Resp');
-        setPuppy(data.puppy);
-      })
-      .catch(error => {
-        console.log(error, 'Error 28');
-      });
+    try {
+      const {data} = await getOnePuppyByDni(user.dni);
+      console.log(data.puppy, 'Succ 18');
+      setPuppy(data.puppy);
+    } catch (error) {
+      console.log(error, 'Error 21');
+    }
+
+    // await axios
+    //   .get(`http://localhost:9000/api/v1.0/cites/puppy/${user.dni}`)
+    //   .then(({data}) => {
+    //     console.log(data.puppy, 'Resp');
+    //     setPuppy(data.puppy);
+    //   })
+    //   .catch(error => {
+    //
+    //   });
   };
   useEffect(() => {
     setTimeout(async () => {

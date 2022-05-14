@@ -29,7 +29,6 @@ export const LoginScreen = ({navigation}) => {
     try {
       await signIn({dni, password});
       Keyboard.dismiss();
-      // navigation.replace('Tabs');
     } catch (error) {
       Alert.alert('Login Incorrecto');
       console.log(error, 'Login Error');
