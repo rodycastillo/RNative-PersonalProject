@@ -6,6 +6,11 @@ export const COLORS = {
   BG_GRAY: '#8F9290',
   TEXT_COLOR: '#3A413D',
   TEXT_EMERGENCY: '#E30027',
+  HOME: '#2f3e46',
+  SECOND: '#354f52',
+  FONTS: '#52796f',
+  HEADER: '#84a98c',
+  TEXT: '#cad2c5',
 };
 
 export const FONTS = {

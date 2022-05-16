@@ -39,8 +39,8 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* NativeBootcampTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeBootcampTests.m; sourceTree = "<group>"; };
 		0BE867D6CB8E96647A0852D7 /* libPods-NativeBootcamp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NativeBootcamp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		107631A346EB452E878EF4B0 /* ProximaNovaAltLight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = ProximaNovaAltLight.otf; path = ../assets/fonts/ProximaNovaAltLight.otf; sourceTree = "<group>"; };
-		10C07F40F16D4F7895B81721 /* ProximaNovaAltBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = ProximaNovaAltBold.otf; path = ../assets/fonts/ProximaNovaAltBold.otf; sourceTree = "<group>"; };
+		107631A346EB452E878EF4B0 /* ProximaNovaAltLight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = ProximaNovaAltLight.otf; path = ../assets/fonts/ProximaNovaAltLight.otf; sourceTree = "<group>"; };
+		10C07F40F16D4F7895B81721 /* ProximaNovaAltBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = ProximaNovaAltBold.otf; path = ../assets/fonts/ProximaNovaAltBold.otf; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* NativeBootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeBootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = NativeBootcamp/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = NativeBootcamp/AppDelegate.m; sourceTree = "<group>"; };
@@ -48,18 +48,20 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = NativeBootcamp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = NativeBootcamp/main.m; sourceTree = "<group>"; };
 		21FE345130A8D079C889041D /* Pods-NativeBootcamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeBootcamp.debug.xcconfig"; path = "Target Support Files/Pods-NativeBootcamp/Pods-NativeBootcamp.debug.xcconfig"; sourceTree = "<group>"; };
-		275B13A4D4964389B254CC30 /* ProximaNovaThin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = ProximaNovaThin.otf; path = ../assets/fonts/ProximaNovaThin.otf; sourceTree = "<group>"; };
+		2392C8972831F44E00176388 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		2392C8982831F47200176388 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		275B13A4D4964389B254CC30 /* ProximaNovaThin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = ProximaNovaThin.otf; path = ../assets/fonts/ProximaNovaThin.otf; sourceTree = "<group>"; };
 		3A0E7B201C9540D4AC403779 /* Pods-NativeBootcamp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeBootcamp.release.xcconfig"; path = "Target Support Files/Pods-NativeBootcamp/Pods-NativeBootcamp.release.xcconfig"; sourceTree = "<group>"; };
-		3BAC1549D9D349B8AA61223E /* ProximaNovaExtrabold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = ProximaNovaExtrabold.otf; path = ../assets/fonts/ProximaNovaExtrabold.otf; sourceTree = "<group>"; };
+		3BAC1549D9D349B8AA61223E /* ProximaNovaExtrabold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = ProximaNovaExtrabold.otf; path = ../assets/fonts/ProximaNovaExtrabold.otf; sourceTree = "<group>"; };
 		5D722D99EA9F7BAF91151EE5 /* Pods-NativeBootcamp-NativeBootcampTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeBootcamp-NativeBootcampTests.debug.xcconfig"; path = "Target Support Files/Pods-NativeBootcamp-NativeBootcampTests/Pods-NativeBootcamp-NativeBootcampTests.debug.xcconfig"; sourceTree = "<group>"; };
-		65576E6378F44C159B42E2E2 /* ProximaNovaAltThin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = ProximaNovaAltThin.otf; path = ../assets/fonts/ProximaNovaAltThin.otf; sourceTree = "<group>"; };
-		6EF2DC6085B240AD992040CA /* ProximaNovaBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = ProximaNovaBold.otf; path = ../assets/fonts/ProximaNovaBold.otf; sourceTree = "<group>"; };
+		65576E6378F44C159B42E2E2 /* ProximaNovaAltThin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = ProximaNovaAltThin.otf; path = ../assets/fonts/ProximaNovaAltThin.otf; sourceTree = "<group>"; };
+		6EF2DC6085B240AD992040CA /* ProximaNovaBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = ProximaNovaBold.otf; path = ../assets/fonts/ProximaNovaBold.otf; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NativeBootcamp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		961ED165C1567EF77A7E001E /* Pods-NativeBootcamp-NativeBootcampTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeBootcamp-NativeBootcampTests.release.xcconfig"; path = "Target Support Files/Pods-NativeBootcamp-NativeBootcampTests/Pods-NativeBootcamp-NativeBootcampTests.release.xcconfig"; sourceTree = "<group>"; };
-		B6D2306E14A54A55B533010A /* ProximaNovaBlack.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = ProximaNovaBlack.otf; path = ../assets/fonts/ProximaNovaBlack.otf; sourceTree = "<group>"; };
+		B6D2306E14A54A55B533010A /* ProximaNovaBlack.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = ProximaNovaBlack.otf; path = ../assets/fonts/ProximaNovaBlack.otf; sourceTree = "<group>"; };
 		D7DF1EDC8AE9DABD950E9A3E /* libPods-NativeBootcamp-NativeBootcampTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NativeBootcamp-NativeBootcampTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F7E3CD7FD79D44E2BFCA548F /* ProximaNovaRegular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = ProximaNovaRegular.otf; path = ../assets/fonts/ProximaNovaRegular.otf; sourceTree = "<group>"; };
+		F7E3CD7FD79D44E2BFCA548F /* ProximaNovaRegular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = ProximaNovaRegular.otf; path = ../assets/fonts/ProximaNovaRegular.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +127,15 @@
 				275B13A4D4964389B254CC30 /* ProximaNovaThin.otf */,
 			);
 			name = Resources;
-			path = "";
+			sourceTree = "<group>";
+		};
+		2392C8962831F40D00176388 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2392C8982831F47200176388 /* MaterialIcons.ttf */,
+				2392C8972831F44E00176388 /* Ionicons.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -159,6 +169,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				2392C8962831F40D00176388 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* NativeBootcamp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* NativeBootcampTests */,
