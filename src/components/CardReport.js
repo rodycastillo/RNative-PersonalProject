@@ -11,7 +11,7 @@ export const CardReport = ({
   const {top} = useSafeAreaInsets();
   return (
     <View style={{flex: 1}}>
-      <View style={{...styles.headerContainer, backgroundColor: '#f4cd07'}}>
+      <View style={{...styles.headerContainer, backgroundColor: '#92BA92'}}>
         <Text
           style={{
             ...styles.puppyName,

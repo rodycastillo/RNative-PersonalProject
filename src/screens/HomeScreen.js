@@ -18,7 +18,9 @@ export const HomeScreen = () => {
         console.log(data.puppy, 'Resp');
         setPuppy(data.puppy);
       })
-      .catch(error => {});
+      .catch(error => {
+        console.log(error);
+      });
   };
   useEffect(() => {
     setTimeout(async () => {
@@ -40,7 +42,7 @@ export const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'red',
+    backgroundColor: '#F1DDBF',
   },
   title: {
     color: '#000',
