@@ -21,15 +21,13 @@ export const Navigator = () => {
           backgroundColor: 'white',
         },
       }}>
-      {!token ? (
+      {token === null ? (
         <>
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
           <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
         </>
       ) : (
-        <>
-          <Stack.Screen name="Tabs" component={TabsNavigator} />
-        </>
+        <Stack.Screen name="Tabs" component={TabsNavigator} />
       )}
     </Stack.Navigator>
   );

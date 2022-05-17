@@ -13,6 +13,7 @@ export const TabsNavigator = () => {
       screenOptions={
         ({
           headerShown: false,
+          tabBarStyle: {backgroundColor: '#AD40AF'},
         },
         ({route}) => ({
           tabBarIcon: ({focused, color, size}) => {
@@ -39,25 +40,29 @@ export const TabsNavigator = () => {
         },
       }}
       initialRouteName="Home"
-      shifting={true}
-      labeled={false}
-      sceneAnimationEnabled={false}
-      activeColor="#00aea2"
-      inactiveColor="#95a5a6"
-      barStyle={{backgroundColor: '#354f52'}}>
+      barStyle={{backgroundColor: '#525E75'}}>
       <Tab.Screen
-        options={{headerShown: false}}
+        options={{
+          headerShown: false,
+          tabBarStyle: {backgroundColor: '#525E75'},
+        }}
         name="Home"
         component={HomeScreen}
       />
       <Tab.Screen
         name="Puppy"
-        options={{headerShown: false}}
+        options={{
+          headerShown: false,
+          tabBarStyle: {backgroundColor: '#525E75'},
+        }}
         component={PuppyScreen}
       />
       <Tab.Screen
-        options={{headerShown: false}}
         name="Profile"
+        options={{
+          headerShown: false,
+          tabBarStyle: {backgroundColor: '#525E75'},
+        }}
         component={ProfileScreen}
       />
     </Tab.Navigator>

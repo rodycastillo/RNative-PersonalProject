@@ -2,17 +2,16 @@ export const authReducer = (state, action) => {
   switch (action.type) {
     case 'LOGIN':
       return {
-        ...state,
+        state: true,
         user: action.payload.user,
-        status: 'authenticated',
+        message: 'authenticated',
         token: action.payload.token,
       };
     case 'LOGOUT':
-    case 'NOT-AUTH':
       return {
-        ...state,
+        state: false,
         user: null,
-        status: 'not-authenticated',
+        message: 'not-authenticated',
         token: null,
       };
     default:

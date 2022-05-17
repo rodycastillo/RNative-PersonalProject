@@ -62,7 +62,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.58,
     shadowRadius: 16.0,
-
     elevation: '24',
   },
   backBtn: {
@@ -74,7 +73,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
     left: 20,
     fontWeight: 'bold',
-    color: COLORS.SECONDARY,
+    color: '#525E75',
     // fontFamily: FONTS.
   },
   puppyImg: {

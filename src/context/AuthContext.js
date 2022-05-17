@@ -1,12 +1,13 @@
 import React, {createContext, useReducer} from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {authReducer} from './AuthReducer';
 import {userLogin, userRegister} from '../services/auth';
+import {Alert} from 'react-native';
 
 const authInitialState = {
-  status: 'checking',
-  token: null,
+  state: false,
   user: null,
+  message: 'not-authenticated',
+  token: null,
 };
 
 export const AuthContext = createContext({});
@@ -17,7 +18,6 @@ export const AuthProvider = ({children}) => {
   const signIn = async dts => {
     try {
       const data = await userLogin(dts);
-      console.log(data, 'SIGNIN');
       dispatch({
         type: 'LOGIN',
         payload: {
@@ -25,10 +25,8 @@ export const AuthProvider = ({children}) => {
           user: data.user,
         },
       });
-      await AsyncStorage.setItem('user', JSON.stringify(data.user));
-      await AsyncStorage.setItem('isLogIn', JSON.stringify(true));
-      await AsyncStorage.setItem('token', data.token);
     } catch (error) {
+      Alert.alert('Login Incorrecto');
       console.log('Error: ' + error);
     }
   };
@@ -41,13 +39,8 @@ export const AuthProvider = ({children}) => {
     }
   };
 
-  const logOut = async () => {
-    await AsyncStorage.removeItem('token');
-    dispatch({type: 'LOGOUT'});
-  };
-
   return (
-    <AuthContext.Provider value={{...state, signIn, signUp, logOut}}>
+    <AuthContext.Provider value={{...state, dispatch, signIn, signUp}}>
       {children}
     </AuthContext.Provider>
   );
