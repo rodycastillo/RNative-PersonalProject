@@ -24,7 +24,7 @@ export const TabsNavigator = () => {
             } else if (route.name === 'Profile') {
               iconName = focused ? 'ios-person' : 'ios-person-outline';
             } else if (route.name === 'Puppy') {
-              iconName = focused ? 'ios-skull' : 'ios-skull-outline';
+              iconName = focused ? 'ios-paw' : 'ios-paw-outline';
             }
             return <Icon name={iconName} size={size} color={color} />;
           },

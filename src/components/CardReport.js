@@ -1,11 +1,12 @@
 import React from 'react';
 import {View, StyleSheet, Text, Image} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {COLORS, FONTS} from '../utils/constants';
 import {FadeInImage} from './FadeInImage';
 
 export const CardReport = ({
-  name = 'QWERTY',
+  name = '',
   img = 'https://source.unsplash.com/random?sig=1',
 }) => {
   const {top} = useSafeAreaInsets();
@@ -17,11 +18,11 @@ export const CardReport = ({
             ...styles.puppyName,
             top: top + 45,
           }}>
+          <Icon name={'ios-paw'} size={39} color={'#525E75'} />
           {name}
         </Text>
         <FadeInImage style={styles.puppyImg} uri={img} />
       </View>
-      <Text>{img}</Text>
     </View>
     // <View style={style.container}>
     //   <Text style={style.title}>Report N^{nro}</Text>
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   headerContainer: {
-    height: 370,
+    height: 340,
     zIndex: 999,
     alignItems: 'center',
     borderBottomRightRadius: 1000,

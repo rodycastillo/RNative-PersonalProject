@@ -1,28 +1,44 @@
 import axios from 'axios';
-import React, {createContext, useState, useEffect, useContext} from 'react';
-import {AuthContext} from './AuthContext';
+import React, {createContext, useReducer} from 'react';
+
+const initialCites = {
+  cite: [],
+};
+
+const citesReducer = (state, action) => {
+  switch (action.type) {
+    case 'CITE':
+      return {
+        cite: action.payload.cite,
+      };
+    default:
+      return state;
+  }
+};
 
 export const CitesContext = createContext({});
 
 export const CitesProvider = ({children}) => {
-  const [cites, setCites] = useState([]);
-
-  const {user} = useContext(AuthContext);
-
-  useEffect(() => {
-    loadCites();
-  }, []);
-
-  const loadCites = async () => {
-    const resp = await axios.get(
-      `http://localhost:9000/api/v1.0/cites/puppy/${user.dni}`,
-    );
-    setCites([...resp.data]);
-    console.log(resp.data, 'Line 21');
+  const [cites, dispatch] = useReducer(citesReducer, initialCites);
+  const loadCites = async dni => {
+    try {
+      const {data} = await axios.get(
+        `http://localhost:9000/api/v1.0/cites/puppy/${dni}`,
+      );
+      dispatch({
+        type: 'CITE',
+        payload: {
+          cite: data.puppy,
+        },
+      });
+      console.log('Saved successfully');
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
-    <CitesContext.Provider value={{cites, loadCites}}>
+    <CitesContext.Provider value={{cites, dispatch, loadCites}}>
       {children}
     </CitesContext.Provider>
   );

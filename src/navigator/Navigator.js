@@ -10,8 +10,6 @@ const Stack = createStackNavigator();
 export const Navigator = () => {
   const {token} = useContext(AuthContext);
 
-  console.log(token);
-
   return (
     <Stack.Navigator
       initialRouteName={'LoginScreen'}

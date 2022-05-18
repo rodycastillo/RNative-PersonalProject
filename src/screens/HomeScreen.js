@@ -4,38 +4,27 @@ import {useEffect} from 'react';
 import {useState} from 'react';
 import {useContext} from 'react';
 import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
-import {CardReport} from '../components/CardReport';
+// import {CardReport} from '../components/CardReport';
 import {AuthContext} from '../context/AuthContext';
+import {CitesContext} from '../context/CitesContext';
 
 export const HomeScreen = () => {
   const {user} = useContext(AuthContext);
-  const [puppy, setPuppy] = useState([]);
+  const {loadCites} = useContext(CitesContext);
 
-  const getPuppy = async () => {
-    await axios
-      .get(`http://localhost:9000/api/v1.0/cites/puppy/${user.dni}`)
-      .then(({data}) => {
-        console.log(data.puppy, 'Resp');
-        setPuppy(data.puppy);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  };
   useEffect(() => {
     setTimeout(async () => {
-      await getPuppy();
+      await loadCites(user.dni);
     }, 1000);
   }, []);
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <View style={styles.container}>
-        <Text style={styles.title}>My Puppy</Text>
+    <View style={styles.container}>
+      <SafeAreaView style={{flex: 1}}>
+        <Text style={styles.title}>This is the home</Text>
         {/* <CardReport name={puppy.puppyName} img={puppy.puppyPhoto}/> */}
-        <CardReport name={puppy.puppyName} />
-        <Text>{JSON.stringify(puppy, null, 2)}</Text>
-      </View>
-    </SafeAreaView>
+        {/* <CardReport name={puppy.puppyName} />*/}
+      </SafeAreaView>
+    </View>
   );
 };
 
