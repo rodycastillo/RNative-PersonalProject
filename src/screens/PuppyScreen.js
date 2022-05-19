@@ -35,7 +35,7 @@ export const PuppyScreen = () => {
 
   return (
     <View style={{flex: 1, backgroundColor: '#F1DDBF'}}>
-      {cites ? (
+      {cites.cite ? (
         <>
           <CardReport name={cites.cite.puppyName} />
           <SafeAreaView style={{flex: 1, marginTop: 80}}>
@@ -68,7 +68,7 @@ export const PuppyScreen = () => {
                         fontSize: 16,
                         paddingLeft: 10,
                       }}>
-                      owner
+                      Dueño
                     </Text>
                   </View>
                 </View>
@@ -92,9 +92,10 @@ export const PuppyScreen = () => {
                   />
                   <View style={styles.ownerBoxName}>
                     <Text style={styles.ownerName}>
-                      {cites.cite.characters.service
-                        ? cites.cite.characters.service
-                        : ''}
+                      {cites.cite &&
+                        (cites.cite.characters.service
+                          ? cites.cite.characters.service
+                          : 'No especifico')}
                     </Text>
                     <Text
                       style={{
@@ -103,12 +104,13 @@ export const PuppyScreen = () => {
                         fontSize: 16,
                         paddingLeft: 10,
                       }}>
-                      servicio
+                      Servicio
                     </Text>
                     <Text style={styles.ownerName}>
-                      {cites.cite.characters.specifications
-                        ? cites.cite.characters.specifications
-                        : ''}
+                      {cites.cite &&
+                        (cites.cite.characters.specifications
+                          ? cites.cite.characters.specifications
+                          : 'No especifico')}
                     </Text>
                     <Text
                       style={{
@@ -117,7 +119,7 @@ export const PuppyScreen = () => {
                         fontSize: 16,
                         paddingLeft: 10,
                       }}>
-                      especificaciones
+                      Especificaciones
                     </Text>
                   </View>
                 </View>
@@ -126,7 +128,7 @@ export const PuppyScreen = () => {
           </SafeAreaView>
         </>
       ) : (
-        <ActivityIndicator size="large" color="black" style={{flex: 1}} />
+        <ActivityIndicator size="large" color="#000" style={{flex: 1}} />
       )}
     </View>
   );

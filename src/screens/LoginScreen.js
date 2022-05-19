@@ -23,7 +23,7 @@ export const LoginScreen = ({navigation}) => {
 
   const onLogin = async () => {
     if (dni.length === 0 || password.length === 0) {
-      Alert.alert('Completa los campos!!');
+      Alert.alert('Complete los campos');
       return;
     }
     try {
@@ -44,9 +44,9 @@ export const LoginScreen = ({navigation}) => {
         }}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <View style={styles.container}>
-          <Text style={styles.title}>Login Native</Text>
+          <Text style={styles.title}>User Login</Text>
 
-          <Text style={styles.label}>dni:</Text>
+          <Text style={styles.label}>DNI:</Text>
           <TextInput
             placeholder="Ingrese su dni"
             placeholderTextColor="rgba(255,255,255,0.4)"
@@ -120,6 +120,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     marginTop: 20,
+    textAlign: 'center',
   },
   label: {
     marginTop: 25,

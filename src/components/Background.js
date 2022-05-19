@@ -6,11 +6,11 @@ export const Background = () => {
     <View
       style={{
         position: 'absolute',
-        backgroundColor: '#2f3e46',
-        top: -250,
+        backgroundColor: '#525E75',
+        top: -150,
         width: 1000,
-        height: 900,
-        transform: [{rotate: '-75deg'}],
+        height: 1000,
+        transform: [{rotate: '-55deg'}],
       }}
     />
   );

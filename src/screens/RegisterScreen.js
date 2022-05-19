@@ -29,7 +29,7 @@ export const RegisterScreen = ({navigation}) => {
       password.length === 0 ||
       dni.length === 0
     ) {
-      Alert.alert('Completa los campos');
+      Alert.alert('Complete los campos');
       return;
     }
     try {
@@ -50,10 +50,10 @@ export const RegisterScreen = ({navigation}) => {
         }}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <View style={style.container}>
-          <Text style={style.title}>Register Native</Text>
+          <Text style={style.title}>User Register</Text>
           <Text style={style.label}>Nombres: </Text>
           <TextInput
-            placeholder="Ingrese su nombre"
+            placeholder="Ingrese sus nombres"
             placeholderTextColor="rgba(255, 255, 255, 0.4)"
             // keyboardType="name"
             underlineColorAndroid="#fff"
@@ -67,9 +67,9 @@ export const RegisterScreen = ({navigation}) => {
             autoCapitalize="none"
             autoCorrect={false}
           />
-          <Text style={style.label}>Dni: </Text>
+          <Text style={style.label}>DNI: </Text>
           <TextInput
-            placeholder="Ingrese su dni"
+            placeholder="Ingrese su DNI"
             placeholderTextColor="rgba(255, 255, 255, 0.4)"
             keyboardType="numeric"
             underlineColorAndroid="#fff"
@@ -84,9 +84,9 @@ export const RegisterScreen = ({navigation}) => {
             autoCapitalize="none"
             autoCorrect={false}
           />
-          <Text style={style.label}>Email: </Text>
+          <Text style={style.label}>Correo: </Text>
           <TextInput
-            placeholder="Ingrese su email"
+            placeholder="Ingrese su correo"
             placeholderTextColor="rgba(255, 255, 255, 0.4)"
             keyboardType="email-address"
             underlineColorAndroid="#fff"
@@ -100,7 +100,7 @@ export const RegisterScreen = ({navigation}) => {
             autoCapitalize="none"
             autoCorrect={false}
           />
-          <Text style={style.label}>Password: </Text>
+          <Text style={style.label}>Contraseña: </Text>
           <TextInput
             placeholder="Ingrese su contraseña"
             placeholderTextColor="rgba(255, 255, 255, 0.4)"

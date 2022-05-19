@@ -4,6 +4,7 @@ import {LoginScreen} from '../screens/LoginScreen';
 import {RegisterScreen} from '../screens/RegisterScreen';
 import {TabsNavigator} from './TabsNavigator';
 import {AuthContext} from '../context/AuthContext';
+import {WelcomeScreen} from '../screens/WelcomeScreen';
 
 const Stack = createStackNavigator();
 
@@ -25,7 +26,10 @@ export const Navigator = () => {
           <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
         </>
       ) : (
-        <Stack.Screen name="Tabs" component={TabsNavigator} />
+        <>
+          <Stack.Screen name="Welcome" component={WelcomeScreen} />
+          <Stack.Screen name="Tabs" component={TabsNavigator} />
+        </>
       )}
     </Stack.Navigator>
   );
