@@ -17,11 +17,22 @@ const ProfileScreen = () => {
       type: 'LOGOUT',
     });
   };
+
+  const splitRole = role => {
+    switch (role) {
+      case 'USER_ROLE':
+        return 'USUARIO';
+      case 'ADMIN_ROLE':
+        return 'ADMINISTRADOR';
+      default:
+        return role;
+    }
+  };
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Icon
-          name={'ios-person-circle-outline'}
+          name={'person-circle-outline'}
           size={120}
           color={'#92BA92'}
           style={styles.iconUser}
@@ -32,20 +43,20 @@ const ProfileScreen = () => {
       <SafeAreaView style={styles.areaView}>
         <View style={styles.containerData}>
           <View style={styles.field}>
-            <Icon name={'ios-at-circle-outline'} size={30} color={'#fff'} />
+            <Icon name={'at-circle-outline'} size={30} color={'#fff'} />
             <Text style={styles.fieldName}>{user && user.email}</Text>
           </View>
           <View style={styles.field}>
-            <Icon name={'ios-barcode'} size={30} color={'#fff'} />
+            <Icon name={'barcode'} size={30} color={'#fff'} />
             <Text style={styles.fieldName}>{user && user._id}</Text>
           </View>
           <View style={styles.field}>
-            <Icon name={'ios-card'} size={30} color={'#fff'} />
+            <Icon name={'card'} size={30} color={'#fff'} />
             <Text style={styles.fieldName}>{user && user.dni}</Text>
           </View>
           <View style={styles.field}>
-            <Icon name={'ios-body'} size={30} color={'#fff'} />
-            <Text style={styles.fieldName}>{user && user.rol}</Text>
+            <Icon name={'body'} size={30} color={'#fff'} />
+            <Text style={styles.fieldName}>{user && splitRole(user.rol)}</Text>
           </View>
         </View>
         <TouchableOpacity style={styles.btnLogOut} onPress={LogOut}>

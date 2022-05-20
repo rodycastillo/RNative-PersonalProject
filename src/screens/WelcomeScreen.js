@@ -52,7 +52,7 @@ export const WelcomeScreen = ({navigation}) => {
           <Text style={styles.titleTxt}>Vet Center</Text>
         </View>
         <Image
-          source={require('../assets/images/slider1.jpg')}
+          source={require('../assets/images/slider1.png')}
           style={styles.petImg}
         />
         <View style={styles.boxBtn}>
