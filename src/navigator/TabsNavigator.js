@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {PuppyScreen} from '../screens/PuppyScreen';
 import {ChatScreen} from '../screens/ChatScreen';
 import {AuthContext} from '../context/AuthContext';
+import NewCite from '../screens/NewCiteScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,6 +18,7 @@ export const TabsNavigator = () => {
     route3: 'Chat',
     route4: 'Perfil',
     route5: 'Add',
+    route6: 'Nueva cita',
   });
 
   const routerRole = r => {
@@ -51,6 +53,8 @@ export const TabsNavigator = () => {
               iconName = focused ? 'person' : 'person-outline';
             } else if (route.name === routes.route2) {
               iconName = focused ? 'paw' : 'paw-outline';
+            } else if (route.name === routes.route6) {
+              iconName = focused ? 'add-circle' : 'add-outline';
             }
             return <Icon name={iconName} size={size} color={color} />;
           },
@@ -82,6 +86,14 @@ export const TabsNavigator = () => {
           tabBarStyle: {backgroundColor: '#525E75'},
         }}
         component={PuppyScreen}
+      />
+      <Tab.Screen
+        name={routes.route6}
+        options={{
+          headerShown: false,
+          tabBarStyle: {backgroundColor: '#525E75'},
+        }}
+        component={NewCite}
       />
       <Tab.Screen
         name={routes.route3}
