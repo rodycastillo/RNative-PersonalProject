@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {BASE_URL} from '@env';
 import React, {createContext, useReducer} from 'react';
 
 const initialCites = {
@@ -22,9 +23,7 @@ export const CitesProvider = ({children}) => {
   const [cites, dispatch] = useReducer(citesReducer, initialCites);
   const loadCites = async dni => {
     try {
-      const {data} = await axios.get(
-        `http://localhost:9000/api/v1.0/cites/puppy/${dni}`,
-      );
+      const {data} = await axios.get(`${BASE_URL}/cites/puppy/${dni}`);
       dispatch({
         type: 'CITE',
         payload: {

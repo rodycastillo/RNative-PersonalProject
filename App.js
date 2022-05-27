@@ -5,6 +5,7 @@ import {Navigator} from './src/navigator/Navigator';
 import {AuthProvider} from './src/context/AuthContext';
 import {LogBox} from 'react-native';
 import {CitesProvider} from './src/context/CitesContext';
+import {BASE_URL} from '@env';
 
 LogBox.ignoreLogs([
   "[react-native-gesture-handler] Seems like you're using an old API with gesture components, check out new Gestures system!",
@@ -19,6 +20,7 @@ const AppState = ({children}) => {
 };
 
 const App = () => {
+  console.log(BASE_URL);
   return (
     <>
       <NavigationContainer>
