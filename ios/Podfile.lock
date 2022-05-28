@@ -209,6 +209,8 @@ PODS:
   - React-jsinspector (0.66.3)
   - React-logger (0.66.3):
     - glog
+  - react-native-image-picker (4.8.3):
+    - React-Core
   - react-native-safe-area-context (3.4.1):
     - React-Core
   - React-perflogger (0.66.3)
@@ -280,6 +282,8 @@ PODS:
     - React-Core
   - RNCMaskedView (0.2.6):
     - React-Core
+  - RNCPicker (2.4.1):
+    - React-Core
   - RNGestureHandler (2.3.0):
     - React-Core
   - RNImageColors (1.5.0):
@@ -311,6 +315,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
+  - react-native-image-picker (from `../node_modules/react-native-image-picker`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -326,6 +331,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - "RNCMaskedView (from `../node_modules/@react-native-masked-view/masked-view`)"
+  - "RNCPicker (from `../node_modules/@react-native-picker/picker`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNImageColors (from `../node_modules/react-native-image-colors`)
   - RNScreens (from `../node_modules/react-native-screens`)
@@ -371,6 +377,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
     :path: "../node_modules/react-native/ReactCommon/logger"
+  react-native-image-picker:
+    :path: "../node_modules/react-native-image-picker"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   React-perflogger:
@@ -401,6 +409,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-async-storage/async-storage"
   RNCMaskedView:
     :path: "../node_modules/@react-native-masked-view/masked-view"
+  RNCPicker:
+    :path: "../node_modules/@react-native-picker/picker"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNImageColors:
@@ -431,6 +441,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 433a691aee158533a6a6ee9c86cb4a1684fa2853
   React-jsinspector: d9c8eb0b53f0da206fed56612b289fec84991157
   React-logger: e522e76fa3e9ec3e7d7115b49485cc065cf4ae06
+  react-native-image-picker: e95b4785b685cfc06609bc50ed6fb55b59990c99
   react-native-safe-area-context: 9e40fb181dac02619414ba1294d6c2a807056ab9
   React-perflogger: 73732888d37d4f5065198727b167846743232882
   React-RCTActionSheet: 96c6d774fa89b1f7c59fc460adc3245ba2d7fd79
@@ -446,6 +457,7 @@ SPEC CHECKSUMS:
   ReactCommon: 9bac022ab71596f2b0fde1268272543184c63971
   RNCAsyncStorage: 9367a646dc24e3ab7b6874d79bc1bfd0832dce58
   RNCMaskedView: c298b644a10c0c142055b3ae24d83879ecb13ccd
+  RNCPicker: abc646b53a3d28ccfa3232c927a0ca52e0cf024d
   RNGestureHandler: 77d59828d40838c9fabb76a12d2d0a80c006906f
   RNImageColors: ed00190f4e743ff4fb1a61285572b5d4e6a0a8f0
   RNScreens: 40a2cb40a02a609938137a1e0acfbf8fc9eebf19

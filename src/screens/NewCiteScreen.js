@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {SafeAreaView, StyleSheet, Text, View, TextInput} from 'react-native';
 import {useForm} from '../hooks/useForm';
 
 const NewCite = () => {
+  const [charactrs, setCharactrs] = useState({
+    service: 'corte y baño',
+    specifications: 'corte schnauzer',
+  });
   const {
     username,
     puppyName,
@@ -18,13 +22,11 @@ const NewCite = () => {
     puppyPhoto: '',
     phone: '973123123',
     status: 'Unattended',
-    characters: {
-      service: 'corte y baño',
-      specifications: 'corte schnauzer',
-    },
+    charactrs,
     dni: '76035765',
   });
-
+  console.log(charactrs);
+  console.log(characters);
   const onSubmit = () => {
     console.log(dni);
   };
@@ -33,7 +35,7 @@ const NewCite = () => {
       <SafeAreaView>
         <Text style={styles.title}>Agregar Nueva Cita</Text>
         <View style={styles.container}>
-          <Text style={styles.label}>Puppy name:</Text>
+          <Text style={styles.label}>Nombre de la mascota:</Text>
           <TextInput
             placeholder="Nombre de la mascota"
             // keyboardType="numeric"
@@ -42,6 +44,60 @@ const NewCite = () => {
             onChangeText={value => onChange(value, 'puppyName')}
             value={puppyName}
             maxLength={8}
+            onSubmitEditing={onSubmit}
+            autoCapitalize="none"
+            autoCorrect={false}
+          />
+          <Text style={styles.label}>Nombre del Usuario:</Text>
+          <TextInput
+            placeholder="Nombre del usuario"
+            style={styles.input}
+            onChangeText={value => onChange(value, 'username')}
+            value={username}
+            onSubmitEditing={onSubmit}
+            autoCapitalize="none"
+            autoCorrect={false}
+          />
+          <Text style={styles.label}>Telefono:</Text>
+          <TextInput
+            placeholder="Telefono"
+            style={styles.input}
+            onChangeText={value => onChange(value, 'phone')}
+            value={phone}
+            onSubmitEditing={onSubmit}
+            autoCapitalize="none"
+            autoCorrect={false}
+          />
+          <Text style={styles.label}>DNI:</Text>
+          <TextInput
+            placeholder="DNI"
+            style={styles.input}
+            keyboardType="numeric"
+            onChangeText={value => onChange(value, 'dni')}
+            value={dni}
+            onSubmitEditing={onSubmit}
+            maxLength={8}
+            autoCapitalize="none"
+            autoCorrect={false}
+          />
+          <Text style={styles.label}>Servicio:</Text>
+          <TextInput
+            placeholder="Servicio"
+            style={styles.input}
+            onChangeText={text => setCharactrs({...charactrs, service: text})}
+            value={charactrs.service}
+            onSubmitEditing={onSubmit}
+            autoCapitalize="none"
+            autoCorrect={false}
+          />
+          <Text style={styles.label}>Especificaciones:</Text>
+          <TextInput
+            placeholder="Especificaciones"
+            style={styles.input}
+            onChangeText={text =>
+              setCharactrs({...charactrs, specifications: text})
+            }
+            value={charactrs.specifications}
             onSubmitEditing={onSubmit}
             autoCapitalize="none"
             autoCorrect={false}
@@ -67,7 +123,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 16,
     fontWeight: '600',
-    marginBottom: 10,
+    marginVertical: 10,
   },
   input: {
     borderColor: '#000',
