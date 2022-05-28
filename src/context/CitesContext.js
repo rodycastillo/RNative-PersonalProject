@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {BASE_URL} from '@env';
 import React, {createContext, useReducer} from 'react';
+import {createPuppyCite} from '../services/cites';
 
 const initialCites = {
   cite: [],
@@ -36,8 +37,18 @@ export const CitesProvider = ({children}) => {
     }
   };
 
+  const createCite = async data => {
+    try {
+      const response = await createPuppyCite(data);
+      console.log(response);
+    } catch (error) {
+      console.log('Error of createCite');
+      console.log(error);
+    }
+  };
+
   return (
-    <CitesContext.Provider value={{cites, dispatch, loadCites}}>
+    <CitesContext.Provider value={{cites, dispatch, loadCites, createCite}}>
       {children}
     </CitesContext.Provider>
   );
