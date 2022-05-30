@@ -1,3 +1,4 @@
+'use-strict';
 import React, {useContext, useState} from 'react';
 import {
   SafeAreaView,
@@ -14,6 +15,7 @@ import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 import {useForm} from '../hooks/useForm';
 import {CitesContext} from '../context/CitesContext';
 import Icon from 'react-native-vector-icons/Ionicons';
+import axios from 'axios';
 
 const NewCite = () => {
   const {createCite} = useContext(CitesContext);
@@ -28,22 +30,55 @@ const NewCite = () => {
       specifications: '',
     });
   const onSubmit = async () => {
-    const formData = new FormData();
-    formData.append('username', username);
-    formData.append('puppyName', puppyName);
-    formData.append('phone', phone);
-    formData.append('dni', dni);
-    formData.append('image', tempURI.uri);
-    formData.append('status', 'Unattended');
-    formData.append('service', service);
-    formData.append('specifications', specifications);
     try {
-      await createCite(formData);
+      const formData = new FormData();
+      formData.append('username', username);
+      formData.append('puppyName', puppyName);
+      formData.append('phone', phone);
+      formData.append('dni', dni);
+      debugger;
+      formData.append('image', await handleUpload());
+      formData.append('status', 'Unattended');
+      formData.append('service', service);
+      formData.append('specifications', specifications);
       Keyboard.dismiss();
+      await createCite(formData);
     } catch (error) {
       console.log(error);
     }
   };
+
+  const handleUpload = async () => {
+    try {
+      const file = {
+        uri: tempURI.uri,
+        type: tempURI.type,
+        name: tempURI.filename,
+      };
+      debugger;
+      const data = new FormData();
+      data.append('file', file);
+      data.append('upload_preset', 'NativeBootcamp');
+      data.append('cloud_name', 'dxzm38a1f');
+      const req = await fetch(
+        'https://api.cloudinary.com/v1_1/dxzm38a1f/image/upload',
+        {
+          method: 'POST',
+          body: data,
+          headers: {
+            Accept: 'application/json',
+            Content: 'multipart/form-data',
+          },
+        },
+      );
+      const resp = await req.json();
+      console.log('Response cloudinary:', resp);
+      return resp;
+    } catch (error) {
+      console.log('Error cloudinary:', error);
+    }
+  };
+
   const takePhoto = () => {
     launchCamera(
       {
@@ -185,9 +220,16 @@ const NewCite = () => {
             )}
             {/* <Text>{JSON.stringify(tempURI, null, 2)}</Text> */}
 
-            <TouchableOpacity onPress={onSubmit} style={styles.btnSendCite}>
+            {/* <TouchableOpacity onPress={onSubmit} style={styles.btnSendCite}>
               <Text style={styles.txtBtnCite}>Guardar Cita</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
+            {tempURI && (
+              <TouchableOpacity
+                onPress={handleUpload}
+                style={styles.btnSendCite}>
+                <Text style={styles.txtBtnCite}>Send Photo</Text>
+              </TouchableOpacity>
+            )}
           </View>
         </SafeAreaView>
       </ScrollView>
