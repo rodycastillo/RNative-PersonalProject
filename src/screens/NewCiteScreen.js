@@ -1,5 +1,5 @@
-'use-strict';
 import React, {useContext, useState} from 'react';
+import {BASE_URL} from '@env';
 import {
   SafeAreaView,
   StyleSheet,
@@ -29,54 +29,48 @@ const NewCite = () => {
       service: '',
       specifications: '',
     });
-  const onSubmit = async () => {
+  const onSubmit = async img => {
     try {
       const formData = new FormData();
       formData.append('username', username);
       formData.append('puppyName', puppyName);
       formData.append('phone', phone);
       formData.append('dni', dni);
-      debugger;
-      formData.append('image', await handleUpload());
+      formData.append('image', img);
       formData.append('status', 'Unattended');
       formData.append('service', service);
       formData.append('specifications', specifications);
       Keyboard.dismiss();
-      await createCite(formData);
+      await axios.post(`${BASE_URL}/cites/`, formData);
     } catch (error) {
-      console.log(error);
+      console.log('error', error);
     }
   };
 
   const handleUpload = async () => {
-    try {
-      const file = {
-        uri: tempURI.uri,
-        type: tempURI.type,
-        name: tempURI.filename,
-      };
-      debugger;
-      const data = new FormData();
-      data.append('file', file);
-      data.append('upload_preset', 'NativeBootcamp');
-      data.append('cloud_name', 'dxzm38a1f');
-      const req = await fetch(
-        'https://api.cloudinary.com/v1_1/dxzm38a1f/image/upload',
-        {
-          method: 'POST',
-          body: data,
-          headers: {
-            Accept: 'application/json',
-            Content: 'multipart/form-data',
-          },
+    const file = {
+      uri: tempURI.uri,
+      type: tempURI.type,
+      name: tempURI.fileName,
+    };
+    console.log('file', file);
+    const data = new FormData();
+    data.append('file', file);
+    data.append('upload_preset', 'petcenter');
+    data.append('cloud_name', 'derfdcryk');
+    const resp = await fetch(
+      'https://api.cloudinary.com/v1_1/derfdcryk/image/upload',
+      {
+        method: 'POST',
+        body: data,
+        headers: {
+          Accept: 'application/json',
+          Content: 'multipart/form-data',
         },
-      );
-      const resp = await req.json();
-      console.log('Response cloudinary:', resp);
-      return resp;
-    } catch (error) {
-      console.log('Error cloudinary:', error);
-    }
+      },
+    );
+    const img = await resp.json();
+    await onSubmit(img.url);
   };
 
   const takePhoto = () => {
@@ -210,9 +204,9 @@ const NewCite = () => {
               <Image
                 source={{uri: tempURI.uri}}
                 style={{
-                  marginTop: 20,
-                  width: 100,
-                  height: 100,
+                  marginTop: 10,
+                  width: 80,
+                  height: 80,
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}

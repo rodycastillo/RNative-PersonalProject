@@ -48,7 +48,7 @@ export const LoginScreen = ({navigation}) => {
 
           <Text style={styles.label}>DNI:</Text>
           <TextInput
-            placeholder="Ingrese su dni"
+            placeholder="Ingrese su DNI"
             placeholderTextColor="rgba(255,255,255,0.4)"
             keyboardType="numeric"
             underlineColorAndroid="white"
@@ -64,9 +64,9 @@ export const LoginScreen = ({navigation}) => {
             autoCapitalize="none"
             autoCorrect={false}
           />
-          <Text style={styles.label}>Password:</Text>
+          <Text style={styles.label}>Contraseña:</Text>
           <TextInput
-            placeholder="Ingrese su password"
+            placeholder="Ingrese su contraseña"
             placeholderTextColor="rgba(255,255,255,0.4)"
             underlineColorAndroid="white"
             secureTextEntry={true}

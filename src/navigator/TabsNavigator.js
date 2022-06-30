@@ -31,7 +31,7 @@ export const TabsNavigator = () => {
   };
 
   useEffect(() => {
-    routerRole(user.rol);
+    routerRole(user?.rol);
   }, []);
 
   return (
@@ -62,13 +62,13 @@ export const TabsNavigator = () => {
           tabBarInactiveTintColor: 'white',
         }))
       }
-      tabBarOptions={{
-        activeBackgroundColor: '#525E75',
-        inactiveBackgroundColor: '#525E75',
-        style: {
-          backgroundColor: '#CE4418',
-        },
-      }}
+      // tabBarOptions={{
+      //   activeBackgroundColor: '#525E75',
+      //   inactiveBackgroundColor: '#525E75',
+      //   style: {
+      //     backgroundColor: '#CE4418',
+      //   },
+      // }}
       initialRouteName={routes.route1}
       barStyle={{backgroundColor: '#525E75'}}>
       <Tab.Screen
